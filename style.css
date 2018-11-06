@@ -3,19 +3,63 @@ body {
     color: #4f4f4f;
 }
 .container {
-    height: 100px;
+    height: 400px;
     max-width: 400px;
     border-radius: 4px;
     border: 1px solid transparent;
     background-color: #fff;
     box-shadow: 0 10px 10px rgb(0,0,0, 0.1);
-    margin: 200px auto;
+    margin: 70px auto;
     padding: 50px;
+}
+
+.select {
+    min-width: 100%;
+    height: 30px;
+    font-size: 17px;
 }
 
 h3 {
     text-align: center;
     color: #808080;
+}
+
+.budget-slider > input[type="range" i] {
+    min-width: 100%;
+    -webkit-appearance: none;
+    width: 300px;
+    height: 10px;
+    border-radius: 5px;
+    background: #e3e3e3;
+    outline: none;
+  }
+
+  .rangeslider__fill {
+      background-color: #3f3f3f !important;
+  }
+
+
+.btn.facebook{
+    padding: 10px;
+    background-color: #8b9dc3;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+}
+.btn.twitter{
+    padding: 10px;
+    background-color: #1dcaff;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+}
+
+.btn.youtube{
+    padding: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
 }
 
 .budget {
@@ -24,8 +68,15 @@ h3 {
     font-weight: bold;
 }
 
+.result {
+    margin: 20px 0;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+
 .budget-price {
     float: right;
     font-size: 20px;
     font-weight: 900;
 }
+
