@@ -68,6 +68,11 @@ h3 {
     background-color: #6c757d;
 }
 
+.estimate-price {
+    float: right;
+    font-size: 19px;
+}
+
 .budget {
     padding: 5px;
     font-size: 18px;
