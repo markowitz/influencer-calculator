@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   function calculateBudget(){
     if (scopeCalculator === 'facebook') {
-      var calcOutput = calculatorInput / calculatorFactor * 1.2;
+      var calcOutput = calculatorInput / calculatorFactor;
       output = calcOutput.toFixed(0);
       $('.estimate-price').text(numberWithCommas(output) + ' Reach')
     }
@@ -43,11 +43,6 @@ $(document).ready(function() {
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
-  var range = $('.input-range');
-  var value = $('.price');
-  var x = value.html(range.attr('value'));
-
     $('.channel .btn').click(function(){
         $('.channel .btn').removeClass('active');
         $(this).addClass('active');
