@@ -73,6 +73,11 @@ h3 {
     font-size: 19px;
 }
 
+.calculate {
+margin-top: 20px;
+float: right;
+}
+
 .budget {
     padding: 5px;
     font-size: 18px;
@@ -80,7 +85,7 @@ h3 {
 }
 
 .result {
-    margin: 20px 0;
+    margin: 100px 0;
     padding: 5px;
     background-color: #f0f0f0;
 }

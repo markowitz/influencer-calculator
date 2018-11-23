@@ -9,7 +9,6 @@ $(document).ready(function() {
 
         $('.price').text(budget);
         calculatorInput = value;
-        calculateBudget();
       }
   });
 
@@ -43,10 +42,18 @@ $(document).ready(function() {
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+        $('.btn-calculate').click(function() {
+          if(!$('.channel .btn').hasClass('active')) {
+            alert('please select a channel');
+          }
+      });
     $('.channel .btn').click(function(){
         $('.channel .btn').removeClass('active');
         $(this).addClass('active');
         scopeCalculator = $(this).attr('scope');
-        calculateBudget();
+        $('.btn-calculate').click(function() {
+          calculateBudget();
+        });
       });
+
 });
