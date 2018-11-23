@@ -25,17 +25,17 @@ $(document).ready(function() {
     else if (scopeCalculator === 'twitter') {
         var calcOutput = calculatorInput / calculatorFactor * 1.3;
         output = calcOutput.toFixed(0);
-        $('.estimate-price').text(numberWithCommas(output) + ' Reach')
+        $('.estimate-price').text(numberWithCommas(output) + ' People')
       }
     else if (scopeCalculator === 'instagram') {
       var calcOutput = calculatorInput / calculatorFactor * 1.3;
       output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' Reach')
+      $('.estimate-price').text(numberWithCommas(output) + ' People')
     }
     else if (scopeCalculator === 'youtube') {
       var calcOutput = calculatorInput / calculatorFactor * 5;
       output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' Reach')
+      $('.estimate-price').text(numberWithCommas(output) + ' views')
     }
   }
 
