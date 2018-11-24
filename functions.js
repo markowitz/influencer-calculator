@@ -1,11 +1,11 @@
 
 $(document).ready(function() {
-
+var calculatorInput = 500;
   $('input[type=range]').rangeslider({
     polyfill: false,
     onSlide: function(position, value) {
 
-        var budget = value.toLocaleString();
+        budget = value.toLocaleString();
 
         $('.price').text(budget);
         calculatorInput = value;
@@ -13,14 +13,13 @@ $(document).ready(function() {
   });
 
   var scopeCalculator = 'facebook';
-  var calculatorInput = 10000;
   var calculatorFactor = 1;
 
   function calculateBudget(){
     if (scopeCalculator === 'facebook') {
       var calcOutput = calculatorInput / calculatorFactor;
       output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' Reach')
+      $('.estimate-price').text(numberWithCommas(output) + ' People')
     }
     else if (scopeCalculator === 'twitter') {
         var calcOutput = calculatorInput / calculatorFactor * 1.3;
@@ -38,6 +37,43 @@ $(document).ready(function() {
       $('.estimate-price').text(numberWithCommas(output) + ' views')
     }
   }
+  function calculateEngagement() {
+    reach = parseInt(calculatorInput);
+    var m = -0.00000000198;
+    var selectInt = parseFloat(0.84,10);
+    if (scopeCalculator === 'facebook') {
+      var engagement = (m * reach) + 0.02;
+      var engagementCat = engagement + selectInt;
+      var percentageEngagement = engagementCat * 100;
+      var engagementPeople = percentageEngagement * reach/100;
+      decimalPlaces = engagementPeople.toFixed(0);
+      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+    }
+    else if (scopeCalculator === 'twitter') {
+      var engagement = (m * reach) + 0.04;
+      var engagementCat = engagement + selectInt;
+      var percentageEngagement = engagementCat * 100;
+      var engagementPeople = percentageEngagement * reach/100;
+      decimalPlaces = engagementPeople.toFixed(0);
+      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+      }
+    else if (scopeCalculator === 'instagram') {
+      var engagement = (m * reach) + 0.05;
+      var engagementCat = engagement + selectInt;
+      var percentageEngagement = engagementCat * 100;
+      var engagementPeople = percentageEngagement * reach/100;
+      decimalPlaces = engagementPeople.toFixed(0);
+      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+    }
+    else if (scopeCalculator === 'youtube') {
+      var engagement = (m * reach) + 0.06;
+      var engagementCat = engagement + selectInt;
+      var percentageEngagement = engagementCat * 100;
+      var engagementPeople = percentageEngagement * reach/100;
+      decimalPlaces = engagementPeople.toFixed(0);
+      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+    }
+  }
 
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -53,6 +89,7 @@ $(document).ready(function() {
         scopeCalculator = $(this).attr('scope');
         $('.btn-calculate').click(function() {
           calculateBudget();
+          calculateEngagement();
         });
       });
 
