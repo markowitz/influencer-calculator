@@ -119,6 +119,26 @@ $(document).ready(function() {
             $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
         }
     }
+    else if (scopeCalculator === 'instagram') {
+      var engagement = (m * intReach) + 0.02;
+      var engagementCat = engagement;
+      var percentageEngagement = engagementCat * 100;
+      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimumDec = minimum.toFixed(1);
+      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximumDec = maximum.toFixed(1);
+      var engagementPeople = percentageEngagement * intReach/100;
+      decimalPlaces = engagementPeople.toFixed(0);
+
+      if(percentageEngagement < 0.5 ){
+
+        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        }
+        else{
+            $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span class="light-blue-text">' + minimumDec + '%' +  ' and ' + maximumDec + '%' + '</span>' + '.' + '</b>');
+            $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+        }
+    }
     else if (scopeCalculator === 'youtube') {
       var engagement = (m * intReach) + 0.02;
       var engagementCat = engagement;
