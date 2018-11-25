@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-var calculatorInput = 500;
+  var calculatorInput = 500;
   $('input[type=range]').rangeslider({
     polyfill: false,
     onSlide: function(position, value) {
@@ -11,73 +11,136 @@ var calculatorInput = 500;
         calculatorInput = value;
       }
   });
-
   var scopeCalculator = 'facebook';
   var calculatorFactor = 1;
 
   function calculateBudget(){
     if (scopeCalculator === 'facebook') {
-      var calcOutput = calculatorInput / calculatorFactor;
-      output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' People')
+      calculatorInput += 340;
+      $('.price').text(calculatorInput);
+      var reach = calculatorInput*50;
+      var reachMargin = reach/100*10;
+
+      if(calculatorInput >= 100 && calculatorInput <= 15000){
+        $('.estimate-price').text(reach + '+ People')
+        }
+        else if(calculatorInput > 15000) {
+            reach += reachMargin;
+            $('.estimate-price').text(reach + '+ People')
+        }
     }
     else if (scopeCalculator === 'twitter') {
-        var calcOutput = calculatorInput / calculatorFactor * 1.3;
-        output = calcOutput.toFixed(0);
-        $('.estimate-price').text(numberWithCommas(output) + ' People')
+        calculatorInput += 300;
+        $('.price').text(calculatorInput);
+      var reach = calculatorInput*50;
+      var reachMargin = reach/100*10;
+
+      if(calculatorInput >= 100 && calculatorInput <= 15000){
+        $('.estimate-price').text(reach + '+ People')
+        }
+        else if(calculatorInput > 15000) {
+            reach += reachMargin;
+            $('.estimate-price').text(reach + '+ People')
+        }
       }
     else if (scopeCalculator === 'instagram') {
-      var calcOutput = calculatorInput / calculatorFactor * 1.3;
-      output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' People')
+      if($('.price').text() === 500) {
+        var reach = calculatorInput*50;
+        var reachMargin = reach/100*10;
+      }
+      calculatorInput += 500;
+      var reach = calculatorInput*50;
+      var reachMargin = reach/100*10;
+
+      if(calculatorInput >= 100 && calculatorInput <= 15000){
+        $('.estimate-price').text(reach + '+ People')
+        }
+        else if(calculatorInput > 15000) {
+            reach += reachMargin;
+            $('.estimate-price').text(reach + '+ People')
+        }
     }
     else if (scopeCalculator === 'youtube') {
-      var calcOutput = calculatorInput / calculatorFactor * 5;
-      output = calcOutput.toFixed(0);
-      $('.estimate-price').text(numberWithCommas(output) + ' views')
+      calculatorInput += 670;
+      var reach = calculatorInput*50;
+      var reachMargin = reach/100*10;
+
+      if(calculatorInput >= 100 && calculatorInput <= 15000){
+        $('.estimate-price').text(reach + '+ People')
+        }
+        else if(calculatorInput > 15000) {
+            reach += reachMargin;
+            $('.estimate-price').text(reach + '+ People')
+        }
     }
   }
   function calculateEngagement() {
-    reach = parseInt(calculatorInput);
+    var reach = $('.estimate-price').text();
+    var intReach = parseInt(reach);
     var m = -0.00000000198;
     var selectInt = parseFloat(0.84,10);
     if (scopeCalculator === 'facebook') {
-      var engagement = (m * reach) + 0.02;
-      var engagementCat = engagement + selectInt;
+      var engagement = (m * intReach) + 0.02;
+      var engagementCat = engagement;
       var percentageEngagement = engagementCat * 100;
-      var engagementPeople = percentageEngagement * reach/100;
+      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimumDec = minimum.toFixed(1);
+      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximumDec = maximum.toFixed(1);
+      var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
-      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+
+      if(percentageEngagement < 0.5 ){
+
+        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        }
+        else{
+            $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span class="light-blue-text">' + minimumDec + '%' +  ' and ' + maximumDec + '%' + '</span>' + '.' + '</b>');
+            $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+        }
     }
     else if (scopeCalculator === 'twitter') {
-      var engagement = (m * reach) + 0.04;
-      var engagementCat = engagement + selectInt;
+      var engagement = (m * intReach) + 0.02;
+      var engagementCat = engagement;
       var percentageEngagement = engagementCat * 100;
-      var engagementPeople = percentageEngagement * reach/100;
+      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimumDec = minimum.toFixed(1);
+      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximumDec = maximum.toFixed(1);
+      var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
-      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
-      }
-    else if (scopeCalculator === 'instagram') {
-      var engagement = (m * reach) + 0.05;
-      var engagementCat = engagement + selectInt;
-      var percentageEngagement = engagementCat * 100;
-      var engagementPeople = percentageEngagement * reach/100;
-      decimalPlaces = engagementPeople.toFixed(0);
-      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+
+      if(percentageEngagement < 0.5 ){
+
+        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        }
+        else{
+            $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span class="light-blue-text">' + minimumDec + '%' +  ' and ' + maximumDec + '%' + '</span>' + '.' + '</b>');
+            $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+        }
     }
     else if (scopeCalculator === 'youtube') {
-      var engagement = (m * reach) + 0.06;
-      var engagementCat = engagement + selectInt;
+      var engagement = (m * intReach) + 0.02;
+      var engagementCat = engagement;
       var percentageEngagement = engagementCat * 100;
-      var engagementPeople = percentageEngagement * reach/100;
+      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimumDec = minimum.toFixed(1);
+      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximumDec = maximum.toFixed(1);
+      var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
-      $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+
+      if(percentageEngagement < 0.5 ){
+
+        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        }
+        else{
+            $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span class="light-blue-text">' + minimumDec + '%' +  ' and ' + maximumDec + '%' + '</span>' + '.' + '</b>');
+            $('.engagementPeople').text("That means you can expect over " + decimalPlaces + " credible mentions to be happening around your brand. ");
+        }
     }
   }
 
-  const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
         $('.btn-calculate').click(function() {
           if(!$('.channel .btn').hasClass('active')) {
             alert('please select a channel');
@@ -89,7 +152,10 @@ var calculatorInput = 500;
         scopeCalculator = $(this).attr('scope');
         $('.btn-calculate').click(function() {
           calculateBudget();
+        });
+        $('.btn-engagement').click(function() {
           calculateEngagement();
+          $('.engage').show();
         });
       });
 

@@ -10,8 +10,8 @@ body {
     border: 1px solid transparent;
     background-color: #fff;
     box-shadow: 0 10px 10px rgb(0,0,0, 0.1);
-    margin: 70px auto;
-    padding: 50px;
+    margin: 40px auto;
+    padding: 5px 50px;
 }
 
 .select {
@@ -70,7 +70,7 @@ h3 {
 
 .estimate-price {
     float: right;
-    font-size: 19px;
+    font-size: 16px;
 }
 
 .calculate {
@@ -80,12 +80,12 @@ float: right;
 
 .budget {
     padding: 5px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .result {
-    margin: 100px 0;
+    margin-top: 70px;
     padding: 5px;
     background-color: #f0f0f0;
 }

@@ -12,9 +12,9 @@
         <div class="container">
             <h3>Influencer Budget Calculator</h3>
             <div class="budget">
-                <p>Your Budget: <span class="budget-price"><i class="price">500</i>€</span></p>
+                <p>Your Budget: <span class="budget-price">€ <i class="price">500</i></span></p>
                 <div class="budget-slider">
-                    <input type="range" name="amount" min="500" value="500" max="300000" class="input-range">
+                    <input type="range" name="amount" min="500" value="500" max="1000000" class="input-range">
                     <p>Channel</p>
                     <div class="btn-group channel">
                             <button class="btn facebook" scope="facebook">Facebook</button>
@@ -23,20 +23,20 @@
                             <button class="btn youtube" scope="youtube">YouTube</button>
                     </div>
                     <div class="calculate">
-                        <button class="btn btn-calculate">Calculate</button>
+                        <button class="btn btn-calculate">Calculate Reach</button>
                     </div>
                             <div class="result">
                                 <p>Reach Margin: <span class="estimate-price"></span></p>
                             </div>
-                            <div class="result">
-                                <p>Engagement: <span class="engagementPeople"></span></p>
+                            <div class="calculate">
+                                <button class="btn btn-engagement">Calculate Engagement</button>
+                            </div>
+                            <div class="result engage" style="display: none">
+                                <p>Engagement: <span class="engagementText"></span></p>
+                                <p class="engagementPeople"></p>
                             </div>
                     </div>
                 </div>
-            </div>
-            <div class="banner">
-                <p class="register">Register on ReachBird and start connecting with influencers today</p>
-                <button class="btn-register">Register as a Marketer</button>
             </div>
     </main>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.1/rangeslider.min.css" />
