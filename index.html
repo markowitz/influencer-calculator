@@ -10,12 +10,12 @@
 <body>
     <main>
         <div class="container">
-            <h3>Influencer Budget Calculator</h3>
+            <h3>Campaign Budget Calculator</h3>
             <div class="budget">
                 <p>Your Budget: <span class="budget-price">€ <i class="price">500</i></span></p>
                 <div class="budget-slider">
                     <input type="range" name="amount" min="500" value="500" max="1000000" class="input-range">
-                    <p>Channel</p>
+                    <p style="padding: 10px;font-size:19px">Channel</p>
                     <div class="btn-group channel">
                             <button class="btn facebook" scope="facebook">Facebook</button>
                             <button class="btn twitter" scope="twitter">Twitter</button>
@@ -26,14 +26,17 @@
                         <button class="btn btn-calculate">Calculate Reach</button>
                     </div>
                             <div class="result">
-                                <p>Reach Margin: <span class="estimate-price"></span></p>
+                                <p>Gross Reach: <span class="estimate-price"></span></p>
                             </div>
                             <div class="calculate">
                                 <button class="btn btn-engagement">Calculate Engagement</button>
                             </div>
-                            <div class="result engage" style="display: none">
+                            <div class="result engage">
                                 <p>Engagement: <span class="engagementText"></span></p>
                                 <p class="engagementPeople"></p>
+                            </div>
+                            <div class="goto">
+                                <button class="btn" style="background-color: #77c1aa">Get Started</button>
                             </div>
                     </div>
                 </div>
