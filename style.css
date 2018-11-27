@@ -60,6 +60,7 @@ h3 {
 .btn:hover {
     transform: scale(1.05);
     background-color: #3D444F;
+    font-size: 15px;
     border-color: transparent;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     color: white;

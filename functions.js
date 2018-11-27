@@ -12,66 +12,34 @@ $(document).ready(function() {
       }
   });
   var scopeCalculator = 'facebook';
-  var calculatorFactor = 1;
-
   function calculateBudget(){
     if (scopeCalculator === 'facebook') {
-      calculatorInput += 340;
-      $('.price').text(calculatorInput);
-      var reach = calculatorInput*50;
-      var reachMargin = reach/100*10;
-
-      if(calculatorInput >= 100 && calculatorInput <= 15000){
-        $('.estimate-price').html('<b style="color: #77c1aa">'+reach+'+</b>' + ' People')
-        }
-        else if(calculatorInput > 15000) {
-            reach += reachMargin;
-            $('.estimate-price').html('<b style="color: #77c1aa">'+reach+ '+</b>' + ' People')
-        }
+      var basic = 9;
+      var follower = 1000;
+      var calcOutput = calculatorInput * follower / (basic * 10);
+      output = calcOutput.toFixed(0);
+      $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'twitter') {
-        calculatorInput += 300;
-        $('.price').text(calculatorInput);
-      var reach = calculatorInput*50;
-      var reachMargin = reach/100*10;
-
-      if(calculatorInput >= 100 && calculatorInput <= 15000){
-        $('.estimate-price').html('<b style="color: #77c1aa">'+reach+'+</b>' + ' People')
-        }
-        else if(calculatorInput > 15000) {
-            reach += reachMargin;
-            $('.estimate-price').html('<b style="color: #77c1aa">'+reach+ '+</b>' + ' People')
-        }
+        var basic = 6;
+        var follower = 1000;
+     var calcOutput = calculatorInput * follower / (basic * 10);
+      output = calcOutput.toFixed(0);
+      $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
       }
     else if (scopeCalculator === 'instagram') {
-      if($('.price').text() === 500) {
-        var reach = calculatorInput*50;
-        var reachMargin = reach/100*10;
-      }
-      calculatorInput += 500;
-      var reach = calculatorInput*50;
-      var reachMargin = reach/100*10;
-
-      if(calculatorInput >= 100 && calculatorInput <= 15000){
-        $('.estimate-price').html('<b style="color: #77c1aa">'+reach+'+</b>' + ' People')
-        }
-        else if(calculatorInput > 15000) {
-            reach += reachMargin;
-            $('.estimate-price').html('<b style="color: #77c1aa">'+reach+ '+</b>' + ' People')
-        }
+      var basic = 8;
+        var follower = 1000;
+     var calcOutput = calculatorInput * follower / (basic * 10);
+      output = calcOutput.toFixed(0);
+      $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'youtube') {
-      calculatorInput += 670;
-      var reach = calculatorInput*50;
-      var reachMargin = reach/100*10;
-
-      if(calculatorInput >= 100 && calculatorInput <= 15000){
-        $('.estimate-price').html('<b style="color: #77c1aa">'+reach+'+</b>' + ' People')
-        }
-        else if(calculatorInput > 15000) {
-            reach += reachMargin;
-            $('.estimate-price').html('<b style="color: #77c1aa">'+reach+ '+</b>' + ' People')
-        }
+      var basic = 15;
+        var follower = 1000;
+     var calcOutput = calculatorInput * follower / (basic * 10);
+      output = calcOutput.toFixed(0);
+      $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
   }
   function calculateEngagement() {
