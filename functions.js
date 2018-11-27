@@ -15,7 +15,7 @@ var $amount = $('#amount');
 
 $("input").change(function () {
   var value = this.value.substring(1);
-  $(".input-range").slider("value", parseInt(value));
+  $(".input-range").rangeslider("value", parseInt(value));
 });
 
   var scopeCalculator = 'facebook';

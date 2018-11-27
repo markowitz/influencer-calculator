@@ -25,6 +25,9 @@ h3 {
     text-align: center;
     color: #183e59;
 }
+.budget-slider {
+    padding-top: 20px;
+}
 
 .budget-slider > input[type="range" i] {
     -webkit-appearance: none;
