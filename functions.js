@@ -16,28 +16,28 @@ $(document).ready(function() {
     if (scopeCalculator === 'facebook') {
       var basic = 9;
       var follower = 1000;
-      var calcOutput = calculatorInput * follower / (basic * 0.9);
+      var calcOutput = calculatorInput * follower / (basic * 1.9);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'twitter') {
         var basic = 6;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / (basic * 0.6);
+     var calcOutput = calculatorInput * follower / (basic * 1.6);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
       }
     else if (scopeCalculator === 'instagram') {
       var basic = 8;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / (basic * 0.8);
+     var calcOutput = calculatorInput * follower / (basic * 1.8);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'youtube') {
       var basic = 15;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / (basic * 1.5);
+     var calcOutput = calculatorInput * follower / (basic * 2.5);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
@@ -48,7 +48,7 @@ $(document).ready(function() {
     var m = -0.00000000198;
     if (scopeCalculator === 'facebook') {
       var engagement = (m * intReach) + 0.02;
-      var engagementCat = engagement * 2.8;
+      var engagementCat = engagement;
       var percentageEngagement = engagementCat * 100;
       var minimum = percentageEngagement - (0.28 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
@@ -87,7 +87,7 @@ $(document).ready(function() {
     }
     else if (scopeCalculator === 'instagram') {
       var engagement = (m * intReach) + 0.02;
-      var engagementCat = engagement * 2.8;
+      var engagementCat = engagement;
       var percentageEngagement = engagementCat * 100;
       var minimum = percentageEngagement - (0.20 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
