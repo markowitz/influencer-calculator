@@ -1,16 +1,23 @@
 
 $(document).ready(function() {
   var calculatorInput = 500;
-  $('input[type=range]').rangeslider({
+var $amount = $('#amount');
+  $('.input-range').rangeslider({
     polyfill: false,
-    onSlide: function(position, value) {
-
-        budget = value.toLocaleString();
-
-        $('.price').text(budget);
-        calculatorInput = value;
-      }
+  }).on('input', function() {
+    $amount[0].value = this.value;
+    calculatorInput = $amount[0].value;
   });
+
+  $amount.on('input', function() {
+    $('.input-range').val(this.value).change();
+  });
+
+$("input").change(function () {
+  var value = this.value.substring(1);
+  $(".input-range").slider("value", parseInt(value));
+});
+
   var scopeCalculator = 'facebook';
   function calculateBudget(){
     if (scopeCalculator === 'facebook') {
@@ -87,7 +94,7 @@ $(document).ready(function() {
     }
     else if (scopeCalculator === 'instagram') {
       var engagement = (m * intReach) + 0.02;
-      var engagementCat = engagement;
+      var engagementCat = engagement * 2.8;
       var percentageEngagement = engagementCat * 100;
       var minimum = percentageEngagement - (0.20 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);

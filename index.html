@@ -12,9 +12,9 @@
         <div class="container">
             <h3>Campaign Budget Calculator</h3>
             <div class="budget">
-                <p>Your Budget: <span class="budget-price">€ <i class="price">500</i></span></p>
+                <p>Your Budget: <span class="budget-price">€ <input type="text" class="price" id="amount" value="500"></span></p>
                 <div class="budget-slider">
-                    <input type="range" name="amount" min="500" value="500" max="1000000" class="input-range">
+                    <input type="range" class="input-range" id="input-range" min="500" max="1000000" value="500">
                     <p style="padding: 10px;font-size:19px">Channel</p>
                     <div class="btn-group channel">
                             <button class="btn facebook" scope="facebook">Facebook</button>
@@ -22,19 +22,20 @@
                             <button class="btn twitter" scope="instagram">Instagram</button>
                             <button class="btn youtube" scope="youtube">YouTube</button>
                     </div>
-                    <div class="calculate">
-                        <button class="btn btn-calculate">Calculate Gross Reach</button>
-                    </div>
                             <div class="result">
                                 <p>Gross Reach: <span class="estimate-price"></span></p>
                             </div>
                             <div class="calculate">
-                                <button class="btn btn-engagement">Calculate Engagement</button>
-                            </div>
+                                    <button class="btn btn-calculate">Calculate Gross Reach</button>
+                                </div>
+
                             <div class="result engage">
                                 <p>Engagement: <span class="engagementText"></span></p>
                                 <p class="engagementPeople"></p>
                             </div>
+                            <div class="calculate">
+                                    <button class="btn btn-engagement">Calculate Engagement</button>
+                                </div>
                             <div class="goto">
                                 <button class="btn" style="background-color: #77c1aa">Get Started</button>
                             </div>

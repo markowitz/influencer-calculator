@@ -102,3 +102,11 @@ text-align: center;
     margin-top: 40px;
     text-align: center;
 }
+
+.price {
+    width: 70px;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #77c1aa;
+}
