@@ -16,28 +16,28 @@ $(document).ready(function() {
     if (scopeCalculator === 'facebook') {
       var basic = 9;
       var follower = 1000;
-      var calcOutput = calculatorInput * follower / basic;
+      var calcOutput = calculatorInput * follower / (basic * 10);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'twitter') {
         var basic = 6;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / basic;
+     var calcOutput = calculatorInput * follower / (basic * 10);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
       }
     else if (scopeCalculator === 'instagram') {
       var basic = 8;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / basic;
+     var calcOutput = calculatorInput * follower / (basic * 10);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
     else if (scopeCalculator === 'youtube') {
       var basic = 15;
         var follower = 1000;
-     var calcOutput = calculatorInput * follower / basic;
+     var calcOutput = calculatorInput * follower / (basic * 10);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
@@ -58,7 +58,7 @@ $(document).ready(function() {
       decimalPlaces = engagementPeople.toFixed(0);
 
       if(percentageEngagement < 0.5 ){
-        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between <b style="color: #77c1aa;font-weight:bolder">0.5%</b> and <b style="color: #77c1aa;font-weight:bolder">1%</b>. and A safe benchmark for this campaign would be to reach <b style="color: #77c1aa;font-weight:bolder">146947+</b> people');
         }
         else{
             $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span style="color: #77c1aa">' + minimumDec + '%' +  '</span>' + ' and ' + '<span style="color: #77c1aa">' + maximumDec + '%' + '</span>' + '.' + '</b>');
@@ -78,7 +78,7 @@ $(document).ready(function() {
 
       if(percentageEngagement < 0.5 ){
 
-        $('.engagementText').text("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
+        $('.engagementText').html("A benchmark for this campaign would be an engagement rate of between 0.5% and 1%. and A safe benchmark for this campaign would be to reach 146947 people");
         }
         else{
           $('.engagementText').html('A benchmark for this campaign would be an engagement rate of between  ' + '<br>' + '<b>' + '<span style="color: #77c1aa">' + minimumDec + '%' +  '</span>' + ' and ' + '<span style="color: #77c1aa">' + maximumDec + '%' + '</span>' + '.' + '</b>');
