@@ -148,7 +148,7 @@ $("input").change(function () {
         });
         $('.btn-engagement').click(function() {
           calculateEngagement();
-          $('.engage').show();
+          $('.goto-btn').show();
         });
       });
 
