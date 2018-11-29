@@ -5,8 +5,8 @@ var $amount = $('#amount');
   $('.input-range').rangeslider({
     polyfill: false,
   }).on('input', function() {
-    $amount[0].value = this.value;
-    calculatorInput = $amount[0].value;
+    $amount.value = this.value;
+    calculatorInput = $amount.value;
   });
 
   $amount.on('input', function() {
