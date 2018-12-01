@@ -2,11 +2,12 @@
 $(document).ready(function() {
   var calculatorInput = 500;
 var $amount = $('#amount');
+
   $('.input-range').rangeslider({
     polyfill: false,
   }).on('input', function() {
-    $amount.value = this.value;
-    calculatorInput = $amount.value;
+    $amount[0].value = this.value;
+    calculatorInput = $amount[0].value;
   });
 
   $amount.on('input', function() {
@@ -23,7 +24,7 @@ $("input").change(function () {
     if (scopeCalculator === 'facebook') {
       var basic = 9;
       var follower = 1000;
-      var calcOutput = calculatorInput * follower / (basic * 1.9);
+      var calcOutput = calculatorInput * follower / 9;
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
