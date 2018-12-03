@@ -24,7 +24,7 @@ $("input").change(function () {
     if (scopeCalculator === 'facebook') {
       var basic = 9;
       var follower = 1000;
-      var calcOutput = calculatorInput * follower / 9;
+      var calcOutput = calculatorInput * follower / (basic * 1.9);
       output = calcOutput.toFixed(0);
       $('.estimate-price').html('<b style="color: #77c1aa;font-weight:bolder">' + output + '+</b>' + ' People');
     }
