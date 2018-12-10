@@ -113,3 +113,8 @@ text-align: center;
     font-weight: bold;
     color: #77c1aa;
 }
+
+a {
+    color: #fff;
+    text-decoration: none;
+}

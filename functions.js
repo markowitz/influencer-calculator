@@ -55,8 +55,8 @@ $("input").change(function () {
     var intReach = parseInt(reach);
     var m = -0.00000000198;
     if (scopeCalculator === 'facebook') {
-      var engagement = (m * intReach) + 0.02;
-      var engagementCat = engagement;
+      var engagement = (m * intReach) + 0.028;
+      var engagementCat = engagement * 2.8;
       var percentageEngagement = engagementCat * 100;
       var minimum = percentageEngagement - (0.28 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
@@ -74,12 +74,12 @@ $("input").change(function () {
         }
     }
     else if (scopeCalculator === 'twitter') {
-      var engagement = (m * intReach) + 0.02;
+      var engagement = (m * intReach) + 0.028;
       var engagementCat = engagement * 2.8;
       var percentageEngagement = engagementCat * 100;
-      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimum = percentageEngagement - (0.28 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
-      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximum = percentageEngagement + (0.28 * percentageEngagement);
       var maximumDec = maximum.toFixed(1);
       var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
@@ -94,12 +94,12 @@ $("input").change(function () {
       }
     }
     else if (scopeCalculator === 'instagram') {
-      var engagement = (m * intReach) + 0.02;
+      var engagement = (m * intReach) + 0.028;
       var engagementCat = engagement * 2.8;
       var percentageEngagement = engagementCat * 100;
-      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimum = percentageEngagement - (0.28 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
-      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximum = percentageEngagement + (0.28 * percentageEngagement);
       var maximumDec = maximum.toFixed(1);
       var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
@@ -114,12 +114,12 @@ $("input").change(function () {
       }
     }
     else if (scopeCalculator === 'youtube') {
-      var engagement = (m * intReach) + 0.02;
+      var engagement = (m * intReach) + 0.028;
       var engagementCat = engagement * 2.8;
       var percentageEngagement = engagementCat * 100;
-      var minimum = percentageEngagement - (0.20 * percentageEngagement);
+      var minimum = percentageEngagement - (0.28 * percentageEngagement);
       var minimumDec = minimum.toFixed(1);
-      var maximum = percentageEngagement + (0.20 * percentageEngagement);
+      var maximum = percentageEngagement + (0.28 * percentageEngagement);
       var maximumDec = maximum.toFixed(1);
       var engagementPeople = percentageEngagement * intReach/100;
       decimalPlaces = engagementPeople.toFixed(0);
